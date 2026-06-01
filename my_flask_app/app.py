@@ -31,10 +31,8 @@ def home():
         
     return render_template("index.html", avg_result=None, grade_status=status)
 
-if __name__ == "__main__":
-    app.run(debug=True)
 if __name__ == '__main__':
-    # Render 會提供環境變數 PORT，如果沒有就預設使用 10000
     import os
+    # 強制將 host 設為 '0.0.0.0'，並讀取 Render 分配的 PORT，找不到就用預設的 10000
     port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
