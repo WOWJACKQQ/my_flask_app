@@ -1,0 +1,372 @@
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自主學習成果展現</title>
+    <style>
+        /* ===== 1️⃣ 全局現代化美化 ===== */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, "Arial", "Microsoft JhengHei", sans-serif;
+            background-color: #f4f6f8; /* 稍深一點的優雅灰，襯托出白色的卡片 */
+            color: #333333;
+        }
+
+        /* ===== 2️⃣ 大氣的首頁橫幅 (Header) ===== */
+        header {
+            background: linear-gradient(135deg, #BB6688, #884466); /* 精緻的漸層粉紫 */
+            color: #FFFFFF;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 4px 15px rgba(136, 68, 102, 0.2);
+        }
+
+        header h1 {
+            margin: 0 0 12px 0;
+            font-size: 2.6rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 0 0 25px 0;
+            opacity: 0.9;
+            font-size: 1.15rem;
+        }
+
+        /* 實體化按鈕 */
+        .btn-link {
+            display: inline-block;
+            background-color: #FFFFFF;
+            color: #884466;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-link:hover {
+            background-color: #fff9fb;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        /* ===== 3️⃣ 圖片最佳化 ===== */
+        .school-img-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 35px auto 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .school-img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px; /* 更加圓潤現代 */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .school-img:hover {
+            transform: scale(1.01); /* 微互動效果 */
+        }
+
+        /* ===== 4️⃣ 版面主容器 ===== */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto 60px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px; /* 呼吸空間加大 */
+        }
+
+        /* ===== 5️⃣ 現代網頁表格美化 ===== */
+        .card-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+
+        .card-table th {
+            background-color: #BB6688;
+            color: #FFFFFF;
+            font-weight: 600;
+            padding: 16px;
+            font-size: 1.1rem;
+        }
+
+        .card-table td {
+            padding: 16px;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .card-table tr:hover {
+            background-color: #fff9fb;
+        }
+
+        /* ===== 6️⃣ 計算機表單專屬美化 ===== */
+        .calculator-card {
+            background-color: #FFFFFF; 
+            border-radius: 12px; 
+            padding: 30px; 
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+
+        .form-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fafafa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .form-group:hover {
+            border-color: #BB6688;
+            background: #fffbfd;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 55%; 
+            padding: 10px; 
+            border-radius: 6px; 
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        /* 輸入框點擊發光效果 */
+        .form-group input:focus {
+            border-color: #BB6688;
+            box-shadow: 0 0 8px rgba(187, 102, 136, 0.3);
+            background-color: #ffffff;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #BB6688, #884466);
+            color: white; 
+            border: none; 
+            padding: 14px 50px; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            font-size: 1.05rem;
+            box-shadow: 0 4px 10px rgba(136, 68, 102, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(136, 68, 102, 0.4);
+        }
+
+        /* ===== 7️⃣ Media Queries：響應式排版微調 ===== */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr; /* 在手機上變成單欄排版 */
+            }
+            header h1 { font-size: 2rem; }
+            .card-table th, .card-table td { padding: 12px; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>自主學習成果展現</h1>
+        <p>Python 程式學習 - 學習 HTML/CSS 與 Python 的整合</p>
+        <a href="https://www.hwhs.tc.edu.tw/home" class="btn-link" target="_blank">前往 弘文中學官網</a>
+    </header>
+
+    <div class="school-img-container">
+        <img src="https://www.hwhs.tc.edu.tw/ischool/rfile/3d53800b6f99017bbefbf0f0b479e6f2&fd=1" class="school-img" alt="弘文中學圖片">
+    </div>
+
+    <div class="container">
+        
+        <table class="card-table">
+            <thead>
+                <tr>
+                    <th>班級</th>
+                    <th>座號</th>
+                    <th>姓名</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>H204</td>
+                    <td>40</td>
+                    <td>廖柏鈞</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="card-table">
+            <thead>
+                <tr>
+                    <th colspan="2" style="background-color: #884466;">學科類別 (第一階)</th>
+                    <th style="background-color: #884466;">包含科目 (第二階)</th>
+                    <th style="background-color: #884466;">本次目標分數</th>
+                    <th style="background-color: #884466;">加權倍數</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3" style="font-weight: bold; background-color: #fff9fb; color: #BB6688; width: 15%;">核心主科</td>
+                    <td style="background-color: #fff9fb; width: 10%;">語文</td>
+                    <td>國文</td>
+                    <td>85 分</td>
+                    <td style="color: #BB6688; font-weight: bold;">x 4</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #fff9fb;">語文</td>
+                    <td>英文</td>
+                    <td>90 分</td>
+                    <td style="color: #BB6688; font-weight: bold;">x 4</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #fff9fb;">數理</td>
+                    <td>數學</td>
+                    <td>80 分</td>
+                    <td style="color: #BB6688; font-weight: bold;">x 4</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="5" style="font-weight: bold; background-color: #fcfcfc; color: #555;">選考副科</td>
+                    <td rowspan="3" style="background-color: #fcfcfc;">自然科學</td>
+                    <td>化學</td>
+                    <td>75 分</td>
+                    <td style="color: #666;">x 2</td>
+                </tr>
+                <tr>
+                    <td>物理</td>
+                    <td>75 分</td>
+                    <td style="color: #666;">x 2</td>
+                </tr>
+                <tr>
+                    <td>生物/地科</td>
+                    <td>80 分</td>
+                    <td style="color: #666;">x 2</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" style="background-color: #fcfcfc;">社會科學</td>
+                    <td>公民</td>
+                    <td>85 分</td>
+                    <td style="color: #666;">x 2</td>
+                </tr>
+                <tr>
+                    <td>地理/歷史</td>
+                    <td>85 分</td>
+                    <td style="color: #666;">x 2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="calculator-card">
+            <h3 style="color: #BB6688; margin-top: 0; font-size: 1.3rem;">📊 第11-15週實作：學科加權平均計算機</h3>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 25px;">主科（國/英/數）加權 x 4，副科（化/物/生/公/地）加權 x 2</p>
+            
+            <form action="/" method="POST" class="form-grid">
+                <div style="grid-column: span 2; border-bottom: 2px solid #BB6688; padding-bottom: 5px; font-weight: bold; color: #BB6688; margin-top: 5px;">主科欄位 (加權 4 倍)</div>
+                <div class="form-group">
+                    <label for="chinese">國文成績：</label>
+                    <input type="number" name="chinese" id="chinese" min="0" max="100" placeholder="請輸入分數" required>
+                </div>
+                <div class="form-group">
+                    <label for="english">英文成績：</label>
+                    <input type="number" name="english" id="english" min="0" max="100" placeholder="請輸入分數" required>
+                </div>
+                <div class="form-group">
+                    <label for="math">數學成績：</label>
+                    <input type="number" name="math" id="math" min="0" max="100" placeholder="請輸入分數" required>
+                </div>
+                <div></div> <div style="grid-column: span 2; border-bottom: 2px solid #BB6688; padding-bottom: 5px; font-weight: bold; color: #BB6688; margin-top: 15px;">副科欄位 (加權 2 倍)</div>
+                <div class="form-group">
+                    <label for="chemistry">化學成績：</label>
+                    <input type="number" name="chemistry" id="chemistry" min="0" max="100" placeholder="請輸入分數" required>
+                </div>
+                <div class="form-group">
+                    <label for="physics">物理成績：</label>
+                    <input type="number" name="physics" id="physics" min="0" max="100" placeholder="請輸入分數" required>
+                </div>
+                <div class="form-group">
+                    <label for="biology">生物/地科：</label>
+                    <input type="number" name="biology" id="biology" min="0" max="100" placeholder="請輸入分數" required>
+                </div>
+                <div class="form-group">
+                    <label for="civics">公民成績：</label>
+                    <input type="number" name="civics" id="civics" min="0" max="100" placeholder="請輸入分數" required>
+                </div>
+                <div class="form-group">
+                    <label for="geography">地理/歷史：</label>
+                    <input type="number" name="geography" id="geography" min="0" max="100" placeholder="請輸入分數" required>
+                </div>
+
+                <div style="grid-column: span 2; text-align: center; margin-top: 25px;">
+                    <button type="submit" class="submit-btn">開始計算加權平均</button>
+                </div>
+            </form>
+
+            {% if avg_result %}
+            <div style="margin-top: 30px; padding: 22px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+                {% if grade_status == 'excellent' %}
+                    background-color: #E8F5E9; border-left: 6px solid #4CAF50;
+                {% elif grade_status == 'pass' %}
+                    background-color: #FFF9FB; border-left: 6px solid #BB6688;
+                {% else %}
+                    background-color: #FFEBEE; border-left: 6px solid #F44336;
+                {% endif %}
+            ">
+                <h4 style="margin: 0 0 12px 0; color: #333; font-size: 1.05rem;">🤖 Python 後端運算完成！</h4>
+                <p style="margin: 0; font-size: 1.35rem; color: #333; font-weight: bold;">
+                    你的加權平均大約是 
+                    <span style="font-size: 2.2rem; font-weight: 800;
+                        {% if grade_status == 'excellent' %} color: #4CAF50;
+                        {% elif grade_status == 'pass' %} color: #BB6688;
+                        {% else %} color: #F44336; {% endif %}
+                    ">{{ avg_result }}</span> 分
+                </p>
+
+                <p style="margin: 12px 0 0 0; font-size: 1.1rem; font-weight: bold;">
+                    學習狀態評價：
+                    {% if grade_status == 'excellent' %}
+                        <span style="color: #4CAF50;">✨ 太強了！這分數非常優秀，繼續保持！</span>
+                    {% elif grade_status == 'pass' %}
+                        <span style="color: #BB6688;">👍 順利過關！表現得很穩定喔！</span>
+                    {% else %}
+                        <span style="color: #F44336;">⚠️ 亮起紅燈！有些科目可能需要多花點時間複習囉！</span>
+                    {% endif %}
+                </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

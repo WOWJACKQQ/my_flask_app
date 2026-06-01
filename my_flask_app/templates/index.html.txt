@@ -1,0 +1,128 @@
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自主學習</title>
+    <style>
+        /* ===== 1️⃣ 基本版面設定 ===== */
+        body {
+            margin: 0;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        header {
+            background-color: #1;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table {
+            background-color: #aa6688;
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ===== 2️⃣ 使用百分比與相對單位 ===== */
+        .container {
+            width: 90%;
+            /* 版面自動依螢幕縮放 */
+            max-width: 1000px;
+            /* 避免在桌機上太寬 */
+            margin: 20px auto;
+        }
+
+        .banner {
+            background-color: #BB6688;
+            height: 30vh;
+            /* 高度為螢幕的 30% */
+            border-radius: 10px;
+        }
+
+        /* ===== 3️⃣ 使用 Flexbox 排版 ===== */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            /* 太窄時自動換行 */
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .col {
+            flex: 1 1 300px;
+            /* 每格最小 300px，會自動調整 */
+            background: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* ===== 4️⃣ Media Queries：針對不同裝置 ===== */
+        /* 手機（寬度 ≤ 600px） */
+        @media (max-width: 600px) {
+            header {
+                background-color: #BB8866;
+            }
+
+            .col {
+                font-size: 14px;
+            }
+        }
+
+        /* 平板（601px ~ 1024px） */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            header {
+                background-color: #77dd77;
+            }
+
+            .col {
+                font-size: 16px;
+            }
+        }
+
+        /* 桌機（≥ 1025px） */
+        @media (min-width: 1025px) {
+            header {
+                background-color: #BB6688;
+            }
+
+            .col {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>自主學習</h1>
+        <p>在不同裝置上自動調整版面</p>
+        <a href="https://www.hwhs.tc.edu.tw/home">點此前往弘文中學官網</a>
+    </header>
+    <img src="https://images.pexels.com/photos/11986481/pexels-photo-11986481.jpeg" width="2048" alt="弘文中學圖片">
+    <div class="container">
+        <table border="10">
+            <tr>
+                <th>項目</th>
+                <th>內容</th>
+            </tr>
+            <tr>
+                <td>鮭魚壽司</td>
+                <td>鮭魚+醋飯</td>
+            </tr>
+        </table>
+        <table border="2">
+            <tr>
+                <th>名字</th>
+                <th>座號</th>
+                <th>名字</th>
+            </tr>
+            <td> H204</td>
+            <td> 40</td>
+            <td> 廖柏鈞</td>
+    </div>
+</body>
+
+</html>
