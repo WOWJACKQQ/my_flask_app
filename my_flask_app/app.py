@@ -34,4 +34,7 @@ def home():
 if __name__ == "__main__":
     app.run(debug=True)
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    # Render 會提供環境變數 PORT，如果沒有就預設使用 10000
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
